@@ -1,28 +1,57 @@
 
-const categoryMenu = document.querySelector("#menu");
+const menuCategories = document.querySelectorAll(".menuBtns")
+    
+const menus = [
+    {
+        name: "appetizersMenu",
+        html: "appetizer.html"
+    },
+    {
+        name: "hotstartersMenu",
+        html: "hotstarter.html"
+    },
+    {
+        name: "maincourseMenu",
+        html: "maincourse.html"
+    },
+    {
+        name: "sidedishesMenu",
+        html: "sidedish.html"
+    },
+    {
+        name: "dessertsMenu",
+        html: "dessert.html"
+    },
+    {
+        name: "drinksMenu",
+        html: "drink.html"
+    }
+]
 
-categoryMenu.addEventListener("click", (e)=>{
-    e.preventDefault();
+menuCategories.forEach(menu=>{
+    menu.addEventListener("click", function(e){
+        e.preventDefault();
+        const selectedId = this.id;
+        menus.forEach((menu)=>{
+            if(menu.name === selectedId){
+                const url = menu.html
+                sayfaYukle(url);
+            }
+        })
+    })
 })
 
 
-
-
-
-
-function sayfaYukle(dosyaAdi) {
-    // fetch ile dosyayı çağırıyoruz
+function sayfaYukle(dosyaAdi){
     fetch(dosyaAdi)
-        .then(response => {
-            // Dosya bulundu mu kontrol et
-            if (!response.ok) throw new Error("Dosya yüklenemedi!");
-            return response.text(); // İçeriği metin (HTML) olarak al
+        .then((response)=>{
+            if(!response.ok) throw new Error("Dosya yüklenemedi!");
+            return response.text();
         })
-        .then(html => {
-            // Gelen HTML içeriğini ana sayfadaki body alanına yerleştir
-            document.getElementById('content-area').innerHTML = html;
+        .then(html=>{
+            document.querySelector(".body-container").innerHTML = html;
         })
-        .catch(error => {
-            console.error("Hata:", error);
-        });
+        .catch(err=>{
+            console.log(err);
+        })
 }

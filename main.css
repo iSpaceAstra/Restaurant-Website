@@ -132,5 +132,18 @@ ul#menu>a:hover{
     right: 20px;
 }
 
+.header-container>button#staff{
+    position: absolute;
+    padding: 5px;
+    background-color:rgb(249,245,233);
+    color: rgb(63, 35, 18);
+    border: 1px solid rgb(63, 35, 18);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    top: 1rem;
+    left: 1rem;
+}
+
 
 
