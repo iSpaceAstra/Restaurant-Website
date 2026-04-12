@@ -1,6 +1,9 @@
 
 const menuCategories = document.querySelectorAll(".menuBtns")
-    
+const staffBtn = document.querySelector("#staff");
+const staffOverlay = document.getElementById("staff-overlay");
+const staffCloseBtn = document.getElementById("closeBtn");
+
 const menus = [
     {
         name: "appetizersMenu",
@@ -55,3 +58,22 @@ function sayfaYukle(dosyaAdi){
             console.log(err);
         })
 }
+
+staffBtn.addEventListener("click", ()=>{
+    staffOverlay.classList.remove('hidden');
+    console.log("Çalıştı")
+    document.body.style.overflow = 'hidden';
+})
+
+staffCloseBtn.addEventListener("click", ()=>{
+    staffOverlay.classList.add('hidden');
+    console.log("Çalıştı")
+    document.body.style.overflow = 'auto';
+})
+
+window.addEventListener("click", (e)=>{
+    if(e.target === staffOverlay){
+        staffOverlay.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    }
+})
