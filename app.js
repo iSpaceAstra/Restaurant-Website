@@ -1,15 +1,7 @@
 
-const appetizersMenu = document.querySelector("#appetizersMenu");
-const hotstartersMenu = document.querySelector("#hotstartersMenu");
+const categoryMenu = document.querySelector("#menu");
 
-
-
-appetizersMenu.addEventListener("click", (e) => {
-    e.preventDefault();
-
-});
-
-hotstartersMenu.addEventListener("click", (e)=>{
+categoryMenu.addEventListener("click", (e)=>{
     e.preventDefault();
 })
 
