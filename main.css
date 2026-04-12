@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    font-size: 16px;
+    font-family: "Noto Sans Display", sans-serif;
+    font-style: normal;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-container {
+    display: flex;
+    width: 100%;
+    height: 15.5rem;
+    background-color: rgb(249, 245, 233);
+    box-shadow: 0px 0px 12px 0.05px rgb(223, 223, 223);
+    justify-content: center;
+
+}
+
+.header-container>img {
+    display: inline-flex;
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    top: 20px;
+
+}
+
+.header-container>h3{
+    display: flex;
+    position: absolute;
+    font-family: "Chicle", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4rem;
+    color:rgb(63, 35, 18);
+}
+
+h3#sunset{
+    position: absolute;
+    top: 2.5rem;
+    left: 34rem;
+}
+
+h3#roasters{
+    position: absolute;
+    top: 2.5rem;
+    right: 31.7rem;
+}
+
+.header-container>span{
+    font-size: 1.5rem;
+    color:rgb(63, 35, 18);
+    font-weight: bold;
+    position: absolute;
+    top: 9.5rem;
+}
+
+ul#menu{
+    display: flex;
+    position: absolute;;
+    list-style:none;
+    width: 100%;
+}
+
+ul#menu>a{
+    display: inline-flex;
+    position: relative;
+    width: 16.6666666667%;
+    height: 3rem;
+    background-color: rgb(249, 245, 233);
+    border: 0.1px solid rgb(178,178,178);
+    top: 12.5rem;
+    color: rgb(63, 35, 18);
+    font-weight:700;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    text-transform: uppercase;
+    
+}
+
+ul#menu>a:hover{
+    width: 17.6%;
+    height: 3.2rem;
+}
+
+.header-container>button#cart{
+    position: absolute;
+    display: inline-flex;
+    height: 1.5rem;
+    width: 1.5rem;
+    padding: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    border: 1px solid rgb(67, 44, 30);
+    border-radius: 50%;
+    color: rgb(63, 35, 18);
+    background-color: rgb(249, 245, 233);
+    top: 2rem;
+    right: 8rem;
+
+}
+
+.header-container>div#total-price{
+    display:inline-flex;
+    position: absolute;
+    width: 8rem;
+    height: 3.1rem;
+    background-color: rgb(249, 245, 233);
+    right: 3.1rem;
+    top: 2rem;
+    align-items:center;
+    justify-content:center;
+    border: 1px solid rgb(67,44,39);
+    border-radius: 30px;   
+}
+
+.header-container>div#total-price>span{
+    display: inline-flex;
+    position: absolute;
+    right: 20px;
+}
+
+
+
