@@ -196,6 +196,7 @@ div#staff-overlay>div.modal-content>a#closeBtn:hover{
 div#staff-overlay>div.modal-content>h2{
     position: absolute;
     top: 5rem;
+    color:  rgb(63, 35, 18);
 }
 
 div#staff-overlay>div.modal-content>div.staff-overlay-inputs{
@@ -213,7 +214,7 @@ div.staff-overlay-inputs{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 20px;
+    gap: 18px;
 }
 
 div.staff-overlay-inputs>div.username>span#person{
@@ -268,6 +269,27 @@ input.logininputs::placeholder{
     opacity: 0.7;
 }
 
-input.logininputs::
+div.staff-overlay-inputs>h2{
+    position:relative;
+    top: -1rem;
+    font-size: 1.4rem;
+    color:rgb(63, 35, 18);
+
+}
+
+div.staff-overlay>div.modal-content>div.staff-overlay-inputs>a#login-btn{
+    background-color: rgb(249, 245, 233);
+    color:rgb(63, 35, 18);
+    width: 5rem;
+    height: 2.5rem;
+    border-radius: 20px;
+    border: 0.1px solid rgb(63, 35, 18);
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
 
 

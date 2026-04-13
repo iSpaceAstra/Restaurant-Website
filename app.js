@@ -3,6 +3,9 @@ const menuCategories = document.querySelectorAll(".menuBtns")
 const staffBtn = document.querySelector("#staff");
 const staffOverlay = document.getElementById("staff-overlay");
 const staffCloseBtn = document.getElementById("closeBtn");
+const usernameInput = document.querySelector("#usernameInput")
+const passwordInput = document.querySelector("#passwordInput")
+const overlayBtn = document.querySelector("#login-btn")
 
 const menus = [
     {
@@ -30,6 +33,11 @@ const menus = [
         html: "drink.html"
     }
 ]
+
+const loginData = {
+    username: "SunsetRoaster",
+    password: "124aBc"
+}
 
 menuCategories.forEach(menu=>{
     menu.addEventListener("click", function(e){
@@ -77,3 +85,15 @@ window.addEventListener("click", (e)=>{
         document.body.style.overflow = 'auto';
     }
 })
+
+overlayBtn.addEventListener("click", (e)=>{
+    e.preventDefault();
+    login(usernameInput.value.trim(),passwordInput.value.trim());
+    
+})
+
+function login(username, password){
+    if(username === loginData.username && password === loginData.password){
+        console.log("Giriş Başarılı!")
+    }
+}
