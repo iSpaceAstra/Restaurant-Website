@@ -94,6 +94,27 @@ overlayBtn.addEventListener("click", (e)=>{
 
 function login(username, password){
     if(username === loginData.username && password === loginData.password){
-        console.log("Giriş Başarılı!")
+        loginCheck(true);
+    }else{
+        loginCheck(false);
     }
+}
+
+function loginCheck(sonuc){
+    const loginCheckDiv = document.querySelector(".login-control")
+    const div = document.createElement("div");
+    if(sonuc===true){
+        div.id = "successful"
+        div.textContent = "Giriş Başarılı Yönlendiriliyorsunuz..."
+        loginCheckDiv.append(div);
+    }else{
+        div.id = "err"
+        div.textContent = "Kullanıcı Adınız veya Şifreniz Hatalı !"
+        loginCheckDiv.append(div);
+    }
+
+    setTimeout(function(){
+        div.remove();
+    },3500);
+
 }

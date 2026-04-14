@@ -291,5 +291,33 @@ div.staff-overlay>div.modal-content>div.staff-overlay-inputs>a#login-btn{
 
 }
 
+div#staff-overlay>div.modal-content>div.staff-overlay-inputs>div.login-control>div#successful{
+    width: 20rem;
+    height: 3rem;
+    border: 3px solid rgba(0, 130, 0, 0.849);
+    background-color: rgba(0, 161, 0, 0.793);
+    border-radius: 20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color: darkgreen;
+    box-shadow: 0px 0px 7px 5px rgb(228, 228, 228);
+    opacity: 0.95;
+}
+
+div#staff-overlay>div.modal-content>div.staff-overlay-inputs>div.login-control>div#err{
+    width: 20rem;
+    height: 3rem;
+    border: 3px solid rgba(139, 0, 0, 0.856);
+    background-color: rgba(218, 0, 0, 0.805);
+    border-radius: 20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color: darkred;
+    box-shadow: 0px 0px 7px 5px rgb(228, 228, 228);
+    opacity: 0.95;
+}
+
 
 
