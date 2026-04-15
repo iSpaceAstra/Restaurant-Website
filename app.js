@@ -125,52 +125,18 @@ function goAdminisator(url) {
         })
         .then(html => {
             document.querySelector("body").innerHTML = html;
+            
+            if (!document.querySelector("script[src='admin.js']")) {
+                 const adminScript = document.createElement("script");
+                 adminScript.src = "admin.js";
+                 document.body.appendChild(adminScript); // Dosyayı body'nin sonuna ekle ve çalıştır
+                 console.log("admin.js başarıyla yüklendi ve çalışıyor!");
+                 document.body.style.overflow = 'auto';
+             }
+
         })
         .catch((err) => {
             console.log(err);
         })
 }
 
-// const backBtn = document.querySelector("#getback")
-
-// if(backBtn){
-//     backBtn.addEventListener("click", (e)=>{
-//     e.preventDefault();
-//     console.log("Çalıştı")
-// })
-// }
-
-// document.addEventListener("click", (event) => {
-//     // Sayfada tıklanan her şeyi konsola yazdırır
-//     console.log("RADAR YAKALADI! Tıklanan eleman:", event.target);
-    
-//     // Sadece senin butonunu arayan özel radar
-//     if (event.target.closest("#backBtn")) {
-//         console.log("BİNGO! Geri butonuna tıklandı.");
-//     }
-// });
-
-document.addEventListener("click", (event) => {
-    
-    const clickedBtn = event.target.closest("#getback");
-    if (clickedBtn) {
-        event.preventDefault(); 
-        returnMain("index.html")
-    }
-});
-
-function returnMain (url){
-    fetch(url)
-        .then(response=>{
-            if(!response.ok) throw new Error("Sayfa bulunamadı!");
-            return response.text();
-        })
-        .then(html=>{
-            setTimeout(function(){
-                document.querySelector("body").innerHTML = html;
-            }, 2700);
-        })
-        .catch(err=>{
-            console.log(err);
-        })
-}

@@ -319,5 +319,10 @@ div#staff-overlay>div.modal-content>div.staff-overlay-inputs>div.login-control>d
     opacity: 0.95;
 }
 
+div.body-container{
+    width: 100%;
+    height: 80rem;
+}
+
 
 
