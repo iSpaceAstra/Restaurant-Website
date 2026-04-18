@@ -10,27 +10,27 @@ const overlayBtn = document.querySelector("#login-btn")
 const menus = [
     {
         name: "appetizersMenu",
-        html: "appetizer.html"
+        html: "main-menus/appetizer.html"
     },
     {
         name: "hotstartersMenu",
-        html: "hotstarter.html"
+        html: "main-menus/hotstarter.html"
     },
     {
         name: "maincourseMenu",
-        html: "maincourse.html"
+        html: "main-menus/maincourse.html"
     },
     {
         name: "sidedishesMenu",
-        html: "sidedish.html"
+        html: "main-menus/sidedish.html"
     },
     {
         name: "dessertsMenu",
-        html: "dessert.html"
+        html: "main-menus/dessert.html"
     },
     {
         name: "drinksMenu",
-        html: "drink.html"
+        html: "main-menus/drink.html"
     }
 ]
 
