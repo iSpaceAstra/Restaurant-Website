@@ -130,7 +130,6 @@ function goAdminisator(url) {
                  const adminScript = document.createElement("script");
                  adminScript.src = "admin.js";
                  document.body.appendChild(adminScript); // Dosyayı body'nin sonuna ekle ve çalıştır
-                 console.log("admin.js başarıyla yüklendi ve çalışıyor!");
                  document.body.style.overflow = 'auto';
              }
 

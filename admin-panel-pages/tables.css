@@ -29,7 +29,7 @@ div.content>ul.tables{
     column-gap: 4.5rem;
 }
 
-ul.tables>a.tables{
+ul.tables>a.table{
     display: flex;
     position: relative;
     flex-direction: column;
@@ -42,12 +42,12 @@ ul.tables>a.tables{
     box-shadow: 0px 0px 12px 5px rgb(203,203,203);
 }
 
-ul.tables>a.tables:hover{
+ul.tables>a.table:hover{
     height: 10.1rem;
     width: 15.1rem;
 }
 
-a.tables>div.titlepart{
+a.table>div.titlepart{
     width: 100%;
     height: 2.5rem;
     border-bottom: 1px solid rgb(63,35,18);
@@ -58,7 +58,7 @@ a.tables>div.titlepart{
     color: rgb(63,35,18);
 }
 
-a.tables>div.contentpart{
+a.table>div.contentpart{
     width: 100%;
     height: 7.5rem;
     display: flex;
@@ -70,5 +70,66 @@ a.tables>div.contentpart{
     color: rgb(63,35,18);
 }
 
+div.content>div.tables-overlay{
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    display: flex;
+    position: fixed;
+    background-color: rgb(0,0,0,0.5);
+    backdrop-filter: blur(8px);
+    z-index: 3;
+    justify-content: center;
+    align-items: center;
+}
+
+div.tables-overlay>div.overlay-content{
+    width: 30rem;
+    height: 35rem;
+    background-color: rgb(249,245,233);
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgb(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+div.overlay-content>div.overlay-title{
+    border-bottom: 1px solid rgb(63,35,18);
+    width: 100%;
+    height: 5rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: rgb(63,35,18);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.overlay-content>div.overlay-title>a#closeBtn{
+    color: rgb(63,35,18);
+    display: flex;
+    position: absolute;
+    font-size: 1.2rem;
+    right: 27.8rem;
+    top: 3.3rem;
+    width: 2rem;
+    justify-content:center;
+    align-items: center;
+    border-radius: 50%;
+    height: 2rem;
+    background-color: rgb(249,245,233);
+    border: 1px solid rgb(63,35,18);
+
+}
+
+div.overlay-content>div.overlay-inside{
+    width: 100%;
+    height: 30rem;
+}
+
+div.content>.hidden{
+    display:none !important; 
+}
 
 

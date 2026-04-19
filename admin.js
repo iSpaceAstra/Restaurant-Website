@@ -12,7 +12,7 @@ const sidebar = [
     },
     {
         id: "sharenew",
-        html: "admin-panel-pages/sharenew.html"
+        html: "admin-panel-pages/sharenews.html"
     },
     {
         id: "support",
@@ -24,49 +24,88 @@ const sidebar = [
     }
 ]
 
-returnBtn.addEventListener("click", (e)=>{
+returnBtn.addEventListener("click", (e) => {
     e.preventDefault();
     returnMain("index.html")
 })
 
-sidebarMenus.forEach(bar=>{
-    bar.addEventListener("click", function(e){
+sidebarMenus.forEach(bar => {
+    bar.addEventListener("click", function (e) {
         e.preventDefault();
         const selectedId = this.id;
-        sidebar.forEach(bar=>{
-            if(bar.id===selectedId){
+        sidebar.forEach(bar => {
+            if (bar.id === selectedId) {
                 loadPage(bar.html);
             }
         })
     })
 })
 
-function loadPage(url){
+function loadPage(url) {
     fetch(url)
-        .then(response=>{
-            if(!response.ok) throw new Error("Dosya bulunamadı");
+        .then(response => {
+            if (!response.ok) throw new Error("Dosya bulunamadı");
             return response.text();
         })
-        .then(html=>{
+        .then(html => {
             document.querySelector("div.content").innerHTML = html;
+
+            openTables();
+            closeOverlay();
         })
-        .catch(err=>{
+        .catch(err => {
             console.log(err);
         })
 }
 
-function returnMain(url){
+function returnMain(url) {
     fetch(url)
-        .then(response=>{
-            if(!response.ok) throw new Error("Dosya bulunamadı!");
+        .then(response => {
+            if (!response.ok) throw new Error("Dosya bulunamadı!");
             return response.text();
         })
-        .then(html=>{
-            setTimeout(function(){
+        .then(html => {
+            setTimeout(function () {
                 document.querySelector("body").innerHTML = html;
-            },2000);
+
+            }, 2000);
         })
-        .catch(err=>{
+        .catch(err => {
             console.log(err);
         })
 }
+
+function closeOverlay() {
+    const closeBtn = document.querySelector("#closeBtn");
+
+    closeBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const tablesOverlay = document.querySelector(".tables-overlay");
+
+        tablesOverlay.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    })
+}
+
+function openTables() {
+    const tables = document.querySelectorAll(".table");
+    const tableTitle = document.querySelector("#table-title");
+    const tablesOverlay = document.querySelector(".tables-overlay");
+
+    tables.forEach(table => {
+        table.addEventListener("click", (e) => {
+            e.preventDefault()
+
+            setTimeout(function () {
+                tableTitle.textContent = table.id;
+
+                tablesOverlay.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+                
+            });
+        })
+    })
+}
+
+
