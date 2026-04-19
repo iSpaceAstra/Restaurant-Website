@@ -139,3 +139,15 @@ function goAdminisator(url) {
         })
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const masaNo = urlParams.get('masa');
+
+        if (masaNo) {
+            const displayElement = document.getElementById("masa-bilgisi");
+            if (displayElement) {
+                displayElement.innerText = "Masa " + masaNo + " - Siparişiniz İçin Menüyü İnceleyin";
+            }
+        }
+    });
+

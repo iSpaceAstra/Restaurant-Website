@@ -178,7 +178,7 @@ body>.staff-overlay>.modal-content{
 }
 
 body>.hidden{
-    display:none;
+    display:none !important;
 }
 
 div#staff-overlay>div.modal-content>a#closeBtn{
@@ -323,6 +323,34 @@ div.body-container{
     width: 100%;
     height: 80rem;
 }
+
+div.welcome-overlay{
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0,0,0,0.5);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+}
+
+div.welcome-overlay>div.content{
+    width: 30rem;
+    height: 35rem;
+    border-radius: 20px;
+    background-color: rgb(249, 245, 233);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 5px 15px rgb(0,0,0,0.3);
+}
+
+
 
 
 
