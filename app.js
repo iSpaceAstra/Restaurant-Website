@@ -181,7 +181,7 @@ function goAdminisator(url) {
 
 document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
-    const masaNo = "3";
+    const masaNo = urlParams.get('masa');
     // urlParams.get('masa')
     document.body.style.overflow = 'hidden';
 
