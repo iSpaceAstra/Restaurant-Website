@@ -199,14 +199,11 @@ function checkTable(masaNo) {
     const tableInput = document.querySelector("#tableEntranceInput")
     const enteredId = tableInput.value.trim();
     const welcomeOverlay = document.querySelector(".welcome-overlay")
-    const tableResult = document.querySelector(".welcomeResult")
-
     tableId.forEach(table => {
         if (table.name == masaNo && table.id === enteredId) {
 
             setTimeout(function () {
-                tableResult.id = "welcomeSuccessful"
-                tableResult.textContent = "Masaya giriş başarılı yönlendiriliyorsunuz..."
+                welcomeCheck(true)
             }, 300)
             welcomeOverlay.classList.add('hidden');
             document.body.style.overflow = 'auto';
@@ -214,13 +211,23 @@ function checkTable(masaNo) {
         } else {
 
             setTimeout(function () {
-                tableResult.id = "welcomeUnsuccessful";
-                tableResult.textContent = "Masa ID'si yanlış !"
-                break;
-            })
+                welcomeCheck(false)
+            },300);
 
         }
     })
 
 }
 
+function welcomeCheck(sonuc){
+    const tableResult = document.querySelector(".welcomeResult")
+
+
+    if(sonuc===true){
+        tableResult.id = "welcomeSuccessful";
+        tableResult.textContent = "Giriş başarılı!"
+    }else{
+        tableResult.id = "welcomeUnsuccessful";
+        tableResult.textContent = "Masa ID'si hatalı girildi!"
+    }
+}
