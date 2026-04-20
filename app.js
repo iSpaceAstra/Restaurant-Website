@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (masaNo) {
             const displayElement = document.getElementById("tableId");
             if (displayElement) {
-                displayElement.innerText = masaNo;
+                displayElement.innerText = "Masa-"+masaNo;
             }
         }
     });
