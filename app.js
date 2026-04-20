@@ -199,14 +199,25 @@ function checkTable(masaNo) {
     const tableInput = document.querySelector("#tableEntranceInput")
     const enteredId = tableInput.value.trim();
     const welcomeOverlay = document.querySelector(".welcome-overlay")
+    const tableResult = document.querySelector(".welcomeResult")
 
     tableId.forEach(table=>{
         if(table.name==masaNo && table.id===enteredId){
-            console.log("Başarılı")
+            
+            setTimeout(function(){
+                tableResult.id = "welcomeSuccessful"
+                tableResult.textContent = "Masaya giriş başarılı yönlendiriliyorsunuz..."
+            },300)
             welcomeOverlay.classList.add('hidden');
             document.body.style.overflow = 'auto';
+            
         }else{
-            console.log("Şifre yanlış")
+
+            setTimeout(function(){
+                tableResult.id = "welcomeUnsuccessful";
+                tableResult.textContent = "Masa ID'si yanlış !"
+            })
+
         }
     })
     
