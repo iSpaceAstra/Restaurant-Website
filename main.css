@@ -35,66 +35,67 @@ html {
 
 }
 
-.header-container>h3{
+.header-container>h3 {
     display: flex;
     position: absolute;
     font-family: "Chicle", serif;
     font-weight: 400;
     font-style: normal;
     font-size: 4rem;
-    color:rgb(63, 35, 18);
+    color: rgb(63, 35, 18);
 }
 
-h3#sunset{
-    position: absolute;
+h3#sunset {
+    position: relative;
     top: 2.5rem;
-    left: 34rem;
+    right: 3rem;
 }
 
-h3#roasters{
-    position: absolute;
+h3#roasters {
+    position: relative;
     top: 2.5rem;
-    right: 31.7rem;
+    right: -5.5rem;
 }
 
-.header-container>span{
+.header-container>span {
     font-size: 1.5rem;
-    color:rgb(63, 35, 18);
+    color: rgb(63, 35, 18);
     font-weight: bold;
     position: absolute;
     top: 9.5rem;
 }
 
-ul#menu{
+ul#menu {
     display: flex;
-    position: absolute;;
-    list-style:none;
+    position: absolute;
+    ;
+    list-style: none;
     width: 100%;
 }
 
-ul#menu>a{
+ul#menu>a {
     display: inline-flex;
     position: relative;
     width: 16.6666666667%;
     height: 3rem;
     background-color: rgb(249, 245, 233);
-    border: 0.1px solid rgb(178,178,178);
+    border: 0.1px solid rgb(178, 178, 178);
     top: 12.5rem;
     color: rgb(63, 35, 18);
-    font-weight:700;
+    font-weight: 700;
     justify-content: center;
     align-items: center;
     transition: 0.3s;
     text-transform: uppercase;
-    
+
 }
 
-ul#menu>a:hover{
+ul#menu>a:hover {
     width: 17.6%;
     height: 3.2rem;
 }
 
-.header-container>button#cart{
+.header-container>button#cart {
     position: absolute;
     display: inline-flex;
     height: 1.5rem;
@@ -112,30 +113,30 @@ ul#menu>a:hover{
 
 }
 
-.header-container>div#total-price{
-    display:inline-flex;
+.header-container>div#total-price {
+    display: inline-flex;
     position: absolute;
     width: 8rem;
     height: 3.1rem;
     background-color: rgb(249, 245, 233);
     right: 3.1rem;
     top: 2rem;
-    align-items:center;
-    justify-content:center;
-    border: 1px solid rgb(67,44,39);
-    border-radius: 30px;   
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(67, 44, 39);
+    border-radius: 30px;
 }
 
-.header-container>div#total-price>span{
+.header-container>div#total-price>span {
     display: inline-flex;
     position: absolute;
     right: 20px;
 }
 
-.header-container>button#staff{
+.header-container>button#staff {
     position: absolute;
     padding: 5px;
-    background-color:rgb(249,245,233);
+    background-color: rgb(249, 245, 233);
     color: rgb(63, 35, 18);
     border: 1px solid rgb(63, 35, 18);
     border-radius: 50%;
@@ -146,25 +147,25 @@ ul#menu>a:hover{
     z-index: 1000;
 }
 
-.header-container>button#staff:hover{
-    background-color: rgb(249,245,225); 
+.header-container>button#staff:hover {
+    background-color: rgb(249, 245, 225);
 }
 
-body>.staff-overlay{
-    position:fixed;
+body>.staff-overlay {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgb(0,0,0,0.5);
+    background: rgb(0, 0, 0, 0.5);
     backdrop-filter: blur(8px);
-    display:flex;
+    display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     z-index: 1000;
 }
 
-body>.staff-overlay>.modal-content{
+body>.staff-overlay>.modal-content {
     background: rgb(249, 245, 233);
     padding: 20px;
     border-radius: 10px;
@@ -172,52 +173,52 @@ body>.staff-overlay>.modal-content{
     height: 35rem;
     position: relative;
     display: flex;
-    box-shadow: 0px 5px 15px rgb(0,0,0,0.3);
+    box-shadow: 0px 5px 15px rgb(0, 0, 0, 0.3);
     justify-content: center;
     align-items: center;
 }
 
-body>.hidden{
-    display:none !important;
+body>.hidden {
+    display: none !important;
 }
 
-div#staff-overlay>div.modal-content>a#closeBtn{
+div#staff-overlay>div.modal-content>a#closeBtn {
     font-size: 1.5rem;
     position: absolute;
-    color:rgb(63, 35, 18);
+    color: rgb(63, 35, 18);
     right: 1rem;
     top: 1rem;
 }
 
-div#staff-overlay>div.modal-content>a#closeBtn:hover{
-    color:rgb(109, 62, 33);
+div#staff-overlay>div.modal-content>a#closeBtn:hover {
+    color: rgb(109, 62, 33);
 }
 
-div#staff-overlay>div.modal-content>h2{
+div#staff-overlay>div.modal-content>h2 {
     position: absolute;
     top: 5rem;
-    color:  rgb(63, 35, 18);
+    color: rgb(63, 35, 18);
 }
 
-div#staff-overlay>div.modal-content>div.staff-overlay-inputs{
+div#staff-overlay>div.modal-content>div.staff-overlay-inputs {
     width: 25rem;
     height: 20rem;
     background-color: rgb(249, 245, 236);
     position: absolute;
     top: 9rem;
     border-radius: 10px;
-    border: 0.1px solid rgb(67,44,30);
+    border: 0.1px solid rgb(67, 44, 30);
 }
 
-div.staff-overlay-inputs{
-    display:flex;
+div.staff-overlay-inputs {
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 18px;
 }
 
-div.staff-overlay-inputs>div.username>span#person{
+div.staff-overlay-inputs>div.username>span#person {
     width: 2rem;
     height: 2rem;
     padding: 10px;
@@ -228,7 +229,7 @@ div.staff-overlay-inputs>div.username>span#person{
     border: 0.1px solid rgb(63, 35, 18);
 }
 
-div.staff-overlay-inputs>div.password>span#password{
+div.staff-overlay-inputs>div.password>span#password {
     width: 2rem;
     height: 2rem;
     padding: 10px;
@@ -239,65 +240,65 @@ div.staff-overlay-inputs>div.password>span#password{
     border: 0.1px solid rgb(63, 35, 18);
 }
 
-div.staff-overlay-inputs>div.username>input.logininputs{
+div.staff-overlay-inputs>div.username>input.logininputs {
     height: 3rem;
     width: 17rem;
-    font-size:0.8rem;
+    font-size: 0.8rem;
     padding-left: 10px;
     border-radius: 10px;
-    border:0.1px solid rgb(63, 35, 18);
+    border: 0.1px solid rgb(63, 35, 18);
     position: relative;
     top: -0.25rem;
 }
 
-div.staff-overlay-inputs>div.password>input.logininputs{
+div.staff-overlay-inputs>div.password>input.logininputs {
     height: 3rem;
     width: 17rem;
     border-radius: 10px;
-    border:0.1px solid rgb(63, 35, 18);
+    border: 0.1px solid rgb(63, 35, 18);
     position: relative;
     top: -0.25rem;
-    font-size:0.8rem;
+    font-size: 0.8rem;
     padding-left: 10px;
 
 }
 
-input.logininputs::placeholder{
+input.logininputs::placeholder {
     color: rgb(63, 35, 18);
-    font-style:italic;
+    font-style: italic;
     font-weight: 500;
     opacity: 0.7;
 }
 
-div.staff-overlay-inputs>h2{
-    position:relative;
+div.staff-overlay-inputs>h2 {
+    position: relative;
     top: -1rem;
     font-size: 1.4rem;
-    color:rgb(63, 35, 18);
+    color: rgb(63, 35, 18);
 
 }
 
-div.staff-overlay>div.modal-content>div.staff-overlay-inputs>a#login-btn{
+div.staff-overlay>div.modal-content>div.staff-overlay-inputs>a#login-btn {
     background-color: rgb(249, 245, 233);
-    color:rgb(63, 35, 18);
+    color: rgb(63, 35, 18);
     width: 5rem;
     height: 2.5rem;
     border-radius: 20px;
     border: 0.1px solid rgb(63, 35, 18);
     position: relative;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 
 }
 
-div#staff-overlay>div.modal-content>div.staff-overlay-inputs>div.login-control>div#successful{
+div#staff-overlay>div.modal-content>div.staff-overlay-inputs>div.login-control>div#successful {
     width: 20rem;
     height: 3rem;
     border: 3px solid rgba(0, 130, 0, 0.849);
     background-color: rgba(0, 161, 0, 0.793);
     border-radius: 20px;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     color: darkgreen;
@@ -305,13 +306,13 @@ div#staff-overlay>div.modal-content>div.staff-overlay-inputs>div.login-control>d
     opacity: 0.95;
 }
 
-div#staff-overlay>div.modal-content>div.staff-overlay-inputs>div.login-control>div#err{
+div#staff-overlay>div.modal-content>div.staff-overlay-inputs>div.login-control>div#err {
     width: 20rem;
     height: 3rem;
     border: 3px solid rgba(139, 0, 0, 0.856);
     background-color: rgba(218, 0, 0, 0.805);
     border-radius: 20px;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     color: darkred;
@@ -319,12 +320,12 @@ div#staff-overlay>div.modal-content>div.staff-overlay-inputs>div.login-control>d
     opacity: 0.95;
 }
 
-div.body-container{
+div.body-container {
     width: 100%;
     height: 80rem;
 }
 
-div.welcome-overlay{
+div.welcome-overlay {
     position: fixed;
     right: 0;
     top: 0;
@@ -333,24 +334,102 @@ div.welcome-overlay{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(0,0,0,0.5);
+    background-color: rgb(0, 0, 0, 0.5);
     backdrop-filter: blur(8px);
     z-index: 1000;
 }
 
-div.welcome-overlay>div.content{
+div.welcome-overlay>div.content {
     width: 30rem;
     height: 35rem;
     border-radius: 20px;
     background-color: rgb(249, 245, 233);
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 5px 15px rgb(0,0,0,0.3);
+    box-shadow: 0px 5px 15px rgb(0, 0, 0, 0.3);
 }
 
+div.welcome-overlay>div.content>div.title-part {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    bottom: 2rem;
+}
 
+div.welcome-overlay>div.content>div.content-part {
+    background-color: rgb(249, 245, 236);
+    border: 0.05px solid rgb(63, 35, 18);
+    border-radius: 15px;
+    width: 25rem;
+    height: 20rem;
+    display: flex;
+    row-gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
+div.content-part>span#tableId {
+    position: relative;
+    color: rgb(63, 35, 18);
+    font-size: 1.5rem;
+    font-weight: bold;
+    bottom: 3rem;
+}
 
+div.content-part>input#tableEntrance {
+    height: 3rem;
+    width: 17rem;
+    border-radius: 20px;
+    border: 0.1px solid rgb(63, 35, 18);
+    position: relative;
+    top: -0.25rem;
+    font-size: 0.8rem;
+    padding-left: 10px;
+}
 
+div.content-part>input#tableEntrance::placeholder{
+    color: rgb(63, 35, 18);
+    font-style: italic;
+    font-weight: 500;
+    opacity: 0.7;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield !important;
+    /* Firefox */
+    appearance: none !important;
+}
+
+div.content-part>a#tableEntrance {
+    background-color: rgb(249, 245, 233);
+    color: rgb(63, 35, 18);
+    width: 5rem;
+    height: 2.5rem;
+    border-radius: 20px;
+    border: 0.1px solid rgb(63, 35, 18);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    top: 1.5rem;
+}
+
+div.content-part>a#tableEntrance:hover{
+    background-color: rgb(63, 35, 18);
+    color: rgb(249, 245, 233);
+}

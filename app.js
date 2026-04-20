@@ -144,9 +144,9 @@ document.addEventListener("DOMContentLoaded", function() {
         const masaNo = urlParams.get('masa');
 
         if (masaNo) {
-            const displayElement = document.getElementById("masa-bilgisi");
+            const displayElement = document.getElementById("tableId");
             if (displayElement) {
-                displayElement.innerText = "Masa " + masaNo + " - Siparişiniz İçin Menüyü İnceleyin";
+                displayElement.innerText = masaNo;
             }
         }
     });
