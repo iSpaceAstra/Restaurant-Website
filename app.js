@@ -201,25 +201,26 @@ function checkTable(masaNo) {
     const welcomeOverlay = document.querySelector(".welcome-overlay")
     const tableResult = document.querySelector(".welcomeResult")
 
-    tableId.forEach(table=>{
-        if(table.name==masaNo && table.id===enteredId){
-            
-            setTimeout(function(){
+    tableId.forEach(table => {
+        if (table.name == masaNo && table.id === enteredId) {
+
+            setTimeout(function () {
                 tableResult.id = "welcomeSuccessful"
                 tableResult.textContent = "Masaya giriş başarılı yönlendiriliyorsunuz..."
-            },300)
+            }, 300)
             welcomeOverlay.classList.add('hidden');
             document.body.style.overflow = 'auto';
-            
-        }else{
 
-            setTimeout(function(){
+        } else {
+
+            setTimeout(function () {
                 tableResult.id = "welcomeUnsuccessful";
                 tableResult.textContent = "Masa ID'si yanlış !"
+                break;
             })
 
         }
     })
-    
+
 }
 
