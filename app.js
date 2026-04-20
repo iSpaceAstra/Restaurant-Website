@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (masaNo) {
         const displayElement = document.getElementById("tableId");
         if (displayElement) {
-            displayElement.innerText = "Masa-" + "masaNo";
+            displayElement.innerText = "Masa-" + masaNo;
         }
     }
     tableBtn.addEventListener("click", (e) => {
@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function checkTable(masaNo) {
-    const tableInput = document.querySelector("tableEntranceInput")
+    const tableInput = document.querySelector("#tableEntranceInput")
     const enteredId = tableInput.value.trim();
 
     tableId.forEach(table=>{
