@@ -204,6 +204,7 @@ function checkTable(masaNo) {
         if(table.name==masaNo && table.id===enteredId){
             console.log("Başarılı")
             welcomeOverlay.classList.add('hidden');
+            document.body.style.overflow = 'auto';
         }else{
             console.log("Şifre yanlış")
         }
