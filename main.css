@@ -382,7 +382,7 @@ div.content-part>span#tableId {
     bottom: 3rem;
 }
 
-div.content-part>input#tableEntrance {
+div.content-part>input#tableEntranceInput{
     height: 3rem;
     width: 17rem;
     border-radius: 20px;
@@ -412,7 +412,7 @@ input[type="number"] {
     appearance: none !important;
 }
 
-div.content-part>a#tableEntrance {
+div.content-part>a#tableEntranceBtn{
     background-color: rgb(249, 245, 233);
     color: rgb(63, 35, 18);
     width: 5rem;
@@ -429,7 +429,7 @@ div.content-part>a#tableEntrance {
     top: 1.5rem;
 }
 
-div.content-part>a#tableEntrance:hover{
+div.content-part>a#tableEntranceBtn:hover{
     background-color: rgb(63, 35, 18);
     color: rgb(249, 245, 233);
 }

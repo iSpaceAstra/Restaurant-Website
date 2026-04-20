@@ -6,6 +6,7 @@ const staffCloseBtn = document.getElementById("closeBtn");
 const usernameInput = document.querySelector("#usernameInput")
 const passwordInput = document.querySelector("#passwordInput")
 const overlayBtn = document.querySelector("#login-btn")
+const tableBtn = document.querySelector("#tableEntranceBtn")
 
 const menus = [
     {
@@ -31,6 +32,45 @@ const menus = [
     {
         name: "drinksMenu",
         html: "main-menus/drink.html"
+    }
+]
+
+const tableId = [
+    {
+        name: "1",
+        id: "07128"
+    },
+    {
+        name: "2",
+        id: "07832"
+    },
+    {
+        name: "3",
+        id: "07943"
+    },
+    {
+        name: "4",
+        id: "07214"
+    },
+    {
+        name: "5",
+        id: "07487"
+    },
+    {
+        name: "6",
+        id: "07761"
+    },
+    {
+        name: "7",
+        id: "07329"
+    },
+    {
+        name: "8",
+        id: "07045"
+    },
+    {
+        name: "9",
+        id: "07639"
     }
 ]
 
@@ -125,13 +165,13 @@ function goAdminisator(url) {
         })
         .then(html => {
             document.querySelector("body").innerHTML = html;
-            
+
             if (!document.querySelector("script[src='admin.js']")) {
-                 const adminScript = document.createElement("script");
-                 adminScript.src = "admin.js";
-                 document.body.appendChild(adminScript); // Dosyayı body'nin sonuna ekle ve çalıştır
-                 document.body.style.overflow = 'auto';
-             }
+                const adminScript = document.createElement("script");
+                adminScript.src = "admin.js";
+                document.body.appendChild(adminScript); // Dosyayı body'nin sonuna ekle ve çalıştır
+                document.body.style.overflow = 'auto';
+            }
 
         })
         .catch((err) => {
@@ -139,15 +179,31 @@ function goAdminisator(url) {
         })
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const masaNo = urlParams.get('masa');
+document.addEventListener("DOMContentLoaded", function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const masaNo = urlParams.get('masa');
+    document.body.style.overflow = 'hidden';
 
-        if (masaNo) {
-            const displayElement = document.getElementById("tableId");
-            if (displayElement) {
-                displayElement.innerText = "Masa-"+masaNo;
-            }
+    if (masaNo) {
+        const displayElement = document.getElementById("tableId");
+        if (displayElement) {
+            displayElement.innerText = "Masa-" + "masaNo";
         }
-    });
+    }
+    tableBtn.addEventListener("click", (e) => {
+        checkTable(masaNo)
+    })
+});
+
+function checkTable(masaNo) {
+    const tableInput = document.querySelector("tableEntranceInput")
+    const enteredId = tableInput.value.trim();
+
+    tableId.forEach(table=>{
+        if(table.name==masaNo && table.id===enteredId){
+            console.log("Başarılı")
+        }
+    })
+    
+}
 
