@@ -181,7 +181,8 @@ function goAdminisator(url) {
 
 document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
-    const masaNo = urlParams.get('masa');
+    const masaNo = "3";
+    // urlParams.get('masa')
     document.body.style.overflow = 'hidden';
 
     if (masaNo) {
@@ -200,34 +201,43 @@ function checkTable(masaNo) {
     const enteredId = tableInput.value.trim();
     const welcomeOverlay = document.querySelector(".welcome-overlay")
     tableId.forEach(table => {
-        if (table.name == masaNo && table.id === enteredId) {
+        if (table.name == masaNo) {
+            if (table.id === enteredId) {
+                welcomeCheck(true);
 
-            setTimeout(function () {
-                welcomeCheck(true)
-            }, 300)
-            welcomeOverlay.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-
-        } else {
-
-            setTimeout(function () {
-                welcomeCheck(false)
-            },300);
-
+                setTimeout(function () {
+                    welcomeOverlay.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                }, 1100)
+            } else {
+                welcomeCheck(false);
+            }
         }
     })
 
 }
 
-function welcomeCheck(sonuc){
-    const tableResult = document.querySelector(".welcomeResult")
+function welcomeCheck(sonuc) {
+    const welcomeResult = document.querySelector(".welcomeResult")
+
+    if (sonuc === true) {
+        welcomeResult.id = "welcomeSuccessful";
+        welcomeResult.textContent = "Masaya başarıyla giriş yapıldı!"
+
+        setTimeout(function () {
+            welcomeResult.id = "";
+            welcomeResult.textContent = "";
+        }, 4000)
 
 
-    if(sonuc===true){
-        tableResult.id = "welcomeSuccessful";
-        tableResult.textContent = "Giriş başarılı!"
-    }else{
-        tableResult.id = "welcomeUnsuccessful";
-        tableResult.textContent = "Masa ID'si hatalı girildi!"
+    } else {
+        welcomeResult.id = "welcomeUnsuccessful";
+        welcomeResult.textContent = "Masa ID'si hatalı girildi!"
+
+        setTimeout(function () {
+            welcomeResult.id = "";
+            welcomeResult.textContent = "";
+        }, 3000)
+
     }
 }

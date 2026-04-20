@@ -390,10 +390,10 @@ div.content-part>input#tableEntranceInput {
     position: relative;
     font-size: 0.8rem;
     padding-left: 10px;
-    top: 0.3rem;
+    top: 1.4rem;
 }
 
-div.content-part>input#tableEntrance::placeholder {
+div.content-part>input#tableEntranceInput::placeholder {
     color: rgb(63, 35, 18);
     font-style: italic;
     font-weight: 500;
@@ -426,7 +426,7 @@ div.content-part>a#tableEntranceBtn {
     font-weight: bold;
     font-size: 0.9rem;
     transition: 0.3s;
-    top: 0.6rem;
+    top: 1.6rem;
 }
 
 div.content-part>a#tableEntranceBtn:hover {
@@ -434,27 +434,29 @@ div.content-part>a#tableEntranceBtn:hover {
     color: rgb(249, 245, 233);
 }
 
-div.content-part>div.welcomeResult {
+div.content-part>div.welcomeResult{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 17rem;
-    height: 3rem;
     border-radius: 20px;
     position: relative;
     opacity: 0.8;
-    top: 0.5rem;
+    top: 1.6rem;
     font-weight: bold;
 }
 
 div.content-part>div#welcomeSuccessful {
     border: 2px solid rgba(0, 130, 0, 0.849);
     background-color: rgba(0, 161, 0, 0.793);
+    width: 17rem;
+    height: 3rem;
     color: rgb(0, 95, 0);
 }
 
 div.content-part>div#welcomeUnsuccessful {
     border: 2px solid rgba(139, 0, 0, 0.856);
     background-color: rgba(218, 0, 0, 0.805);
+    width: 17rem;
+    height: 3rem;
     color: darkred;
 }
