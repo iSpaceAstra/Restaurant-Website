@@ -198,10 +198,14 @@ document.addEventListener("DOMContentLoaded", function () {
 function checkTable(masaNo) {
     const tableInput = document.querySelector("#tableEntranceInput")
     const enteredId = tableInput.value.trim();
+    const welcomeOverlay = document.querySelector(".welcome-overlay")
 
     tableId.forEach(table=>{
         if(table.name==masaNo && table.id===enteredId){
             console.log("Başarılı")
+            welcomeOverlay.classList.add('hidden');
+        }else{
+            console.log("Şifre yanlış")
         }
     })
     
