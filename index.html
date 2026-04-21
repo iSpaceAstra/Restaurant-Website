@@ -28,8 +28,10 @@
             <h3 id="sunset">Sunset</h3>
             <img src="img/SunsetRoastersLogo.png" alt="sunsetroasterlogo">
             <h3 id="roasters">Roasters</h3>
-            <div id="total-price"><span>0.00 TL</span></div>
-            <button id="cart"><i class="fa-solid fa-bell-concierge"></i></button>
+            <a href="#" class="order">
+                <div id="total-price"><span>0.00 TL</span></div>
+                <div id="cart"><i class="fa-solid fa-bell-concierge"></i></div>
+            </a>
             <button id="staff"><i class="fa-solid fa-user"></i></button>
             <span>MENU | Sipariş Sistemi</span>
             <ul id="menu">
@@ -54,7 +56,7 @@
             </ul>
         </div>
         <div class="body-container">
-
+            <!-- <button onclick="siparisVer('Latte', 80)">Deneme Siparişi Ver</button> -->
         </div>
         <div class="footer-container">
 
@@ -83,10 +85,10 @@
         </div>
     </div>
 
-    <div class="welcome-overlay">
+    <div class="welcome-overlay hidden">
         <div class="content">
             <div class="title-part">
-                <h2 id="masa-bilgisi">Sunset Roaster'a Hoşgeldiniz  !</h2>
+                <h2 id="masa-bilgisi">Sunset Roaster'a Hoşgeldiniz !</h2>
                 <span>Lütfen QR kodun altında yer alan numarayı giriniz...</span>
             </div>
             <div class="content-part">
@@ -97,6 +99,8 @@
             </div>
         </div>
     </div>
+
+    <script type="module" src="app.js"></script>
 
     <script src="app.js"></script>
 </body>
