@@ -200,8 +200,7 @@ function goAdminisator(url) {
 document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
     const masaNo = urlParams.get('masa');
-    // urlParams.get('masa')
-    // document.body.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
 
     if (masaNo) {
         const displayElement = document.getElementById("tableId");
@@ -260,7 +259,7 @@ function welcomeCheck(sonuc) {
     }
 }
 
-window.siparisVer = function(urunAdi, fiyat) {
+window.siparisVer = function (urunAdi, fiyat) {
     // 1. URL'den masa numarasını al (Örn: ?masa=5)
     const urlParams = new URLSearchParams(window.location.search);
     const masaNo = urlParams.get('masa') || "Masa Seçilmedi";
@@ -277,21 +276,21 @@ window.siparisVer = function(urunAdi, fiyat) {
         durum: "Hazırlanıyor",
         zaman: new Date().toLocaleString('tr-TR')
     })
-    .then(() => {
-        alert("Sipariş Alındı! Masa: " + masaNo + " Ürün: " + urunAdi);
-    })
-    .catch((error) => {
-        console.error("Hata:", error);
-    });
+        .then(() => {
+            alert("Sipariş Alındı! Masa: " + masaNo + " Ürün: " + urunAdi);
+        })
+        .catch((error) => {
+            console.error("Hata:", error);
+        });
 };
 
-orderBtn.addEventListener("click", ()=>{
+orderBtn.addEventListener("click", () => {
     fetch("orderpage.html")
-        .then(response=>{
-            if(!response.ok) throw new Error("Dosya yüklenemedi!")
+        .then(response => {
+            if (!response.ok) throw new Error("Dosya yüklenemedi!")
             return response.text();
         })
-        .then(html=>{
+        .then(html => {
             document.querySelector(".body-container").innerHTML = html;
 
             if (!document.querySelector("script[src='order.js']")) {
@@ -301,28 +300,28 @@ orderBtn.addEventListener("click", ()=>{
                 document.body.style.overflow = 'auto';
             }
         })
-        .catch(err=>{
+        .catch(err => {
             console.log(err);
         })
 })
 
-document.addEventListener('click', function(event) {
-    
+document.addEventListener('click', function (event) {
+
     const mealPage = event.target.closest('.meal');
 
     if (mealPage) {
-        event.preventDefault(); 
+        event.preventDefault();
 
         const mealTitle = mealPage.querySelector('.title').innerText;
         const mealImg = mealPage.querySelector('.img-part img').src;
         const mealDesc = mealPage.querySelector('.explanation').innerText;
         const mealPrice = mealPage.querySelector('.price').innerText;
 
-        openMealPage(mealTitle,mealImg,mealDesc,mealPrice);
+        openMealPage(mealTitle, mealImg, mealDesc, mealPrice);
     }
 });
 
-function openMealPage(title,img,desc,price){
+function openMealPage(title, img, desc, price) {
     const div = document.querySelector(".meal-overlay");
 
     div.querySelector("h3").innerText = title;
@@ -334,10 +333,10 @@ function openMealPage(title,img,desc,price){
     document.body.style.overflow = 'hidden';
 }
 
-document.addEventListener('click', function(event){
+document.addEventListener('click', function (event) {
     const closeBtn = event.target.closest('#mealcloseBtn')
 
-    if(closeBtn){
+    if (closeBtn) {
         event.preventDefault();
         const div = document.querySelector(".meal-overlay");
         div.classList.remove('active');
