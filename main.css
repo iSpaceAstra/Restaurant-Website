@@ -70,6 +70,7 @@ ul#menu {
     position: absolute;
     list-style: none;
     width: 100%;
+    z-index: 2;
 }
 
 ul#menu>a {
@@ -149,6 +150,7 @@ ul#menu>a:hover {
     left: 1rem;
     z-index: 1000;
 }
+
 
 .header-container>button#staff:hover {
     background-color: rgb(249, 245, 225);

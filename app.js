@@ -29,27 +29,27 @@ const orderBtn = document.querySelector(".order");
 const menus = [
     {
         name: "appetizersMenu",
-        html: "main-menus/appetizer.html"
+        html: "main-menus/appetizers.html"
     },
     {
         name: "hotstartersMenu",
-        html: "main-menus/hotstarter.html"
+        html: "main-menus/hotstarters.html"
     },
     {
         name: "maincourseMenu",
-        html: "main-menus/maincourse.html"
+        html: "main-menus/maincourses.html"
     },
     {
         name: "sidedishesMenu",
-        html: "main-menus/sidedish.html"
+        html: "main-menus/sidedishes.html"
     },
     {
         name: "dessertsMenu",
-        html: "main-menus/dessert.html"
+        html: "main-menus/desserts.html"
     },
     {
         name: "drinksMenu",
-        html: "main-menus/drink.html"
+        html: "main-menus/drinks.html"
     }
 ]
 
@@ -286,5 +286,28 @@ window.siparisVer = function(urunAdi, fiyat) {
 };
 
 orderBtn.addEventListener("click", ()=>{
-    sayfaYukle("orderpage.html");
+    fetch("orderpage.html")
+        .then(response=>{
+            if(!response.ok) throw new Error("Dosya yüklenemedi!")
+            return response.text();
+        })
+        .then(html=>{
+            document.querySelector(".body-container").innerHTML = html;
+
+            if (!document.querySelector("script[src='order.js']")) {
+                const orderScript = document.createElement("script");
+                orderScript.src = "order.js";
+                document.body.appendChild(orderScript); // Dosyayı body'nin sonuna ekle ve çalıştır
+                document.body.style.overflow = 'auto';
+            }
+        })
+        .catch(err=>{
+            console.log(err);
+        })
+})
+
+document.addEventListener("click", (event)=>{
+    if(event.target.classList.contains('price-buy')){
+        console.log("Çalışıyor")
+    }   
 })
