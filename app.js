@@ -306,8 +306,41 @@ orderBtn.addEventListener("click", ()=>{
         })
 })
 
-document.addEventListener("click", (event)=>{
-    if(event.target.classList.contains('price-buy')){
-        console.log("Çalışıyor")
-    }   
+document.addEventListener('click', function(event) {
+    
+    const mealPage = event.target.closest('.meal');
+
+    if (mealPage) {
+        event.preventDefault(); 
+
+        const mealTitle = mealPage.querySelector('.title').innerText;
+        const mealImg = mealPage.querySelector('.img-part img').src;
+        const mealDesc = mealPage.querySelector('.explanation').innerText;
+        const mealPrice = mealPage.querySelector('.price').innerText;
+
+        openMealPage(mealTitle,mealImg,mealDesc,mealPrice);
+    }
+});
+
+function openMealPage(title,img,desc,price){
+    const div = document.querySelector(".meal-overlay");
+
+    div.querySelector("h3").innerText = title;
+    div.querySelector("img").src = img;
+    div.querySelector("p").innerText = desc;
+    div.querySelector(".price").innerText = price;
+
+    div.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+document.addEventListener('click', function(event){
+    const closeBtn = event.target.closest('#mealcloseBtn')
+
+    if(closeBtn){
+        event.preventDefault();
+        const div = document.querySelector(".meal-overlay");
+        div.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
 })

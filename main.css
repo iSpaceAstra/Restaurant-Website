@@ -439,7 +439,7 @@ div.content-part>a#tableEntranceBtn:hover {
     color: rgb(249, 245, 233);
 }
 
-div.content-part>div.welcomeResult{
+div.content-part>div.welcomeResult {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -464,4 +464,157 @@ div.content-part>div#welcomeUnsuccessful {
     width: 17rem;
     height: 3rem;
     color: darkred;
+}
+
+div.meal-overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+div.meal-overlay {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+div.meal-overlay>div.content {
+    width: 45rem;
+    height: 40rem;
+    border-radius: 20px;
+    background-color: rgb(249, 245, 233);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 5px 15px rgb(0, 0, 0, 0.3);
+}
+
+div.content>div.img-part {
+    height: 20rem;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom: 0.1px solid rgb(63, 35, 18);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.img-part>img {
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    object-fit: cover;
+    object-position: center;
+}
+
+div.img-part>a>i {
+    color: rgb(63, 35, 18);
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+}
+
+div.img-part>a>i:hover {
+    font-size: 1.55rem;
+    top: 0.975rem;
+    right: 0.975rem;
+}
+
+div.content>div.text-part{
+    height: 20rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+
+}
+
+div.text-part>div.text-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    width: 100%;
+    font-size: 1.2rem;
+    color: rgb(63,35,18);
+    font-weight: 600;
+}
+
+div.text-part>div.explanation {
+    width: 100%;
+    height: 7rem;
+    padding: 0.25rem 3rem;
+    color: rgb(63, 35, 18);
+    text-align: left;
+    justify-content: center;
+}
+
+div.text-part>div.note {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+}
+
+div.note>textarea {
+    resize: none;
+    padding: 8px;
+    border-radius: 10px;
+    font-style: italic;
+    font-size: 0.85rem;
+    font-weight: bold;
+    background-color: rgb(249, 245, 240)
+}
+
+div.text-part>div.buy-part {
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.8rem;
+}
+
+div.buy-part>span.price{
+    font-weight: bold;
+    color: rgb(63, 35, 18);
+    padding: 10px;
+    background-color: rgb(249,245,240);
+    border: 0.1px solid rgb(63,35,18);
+    border-radius: 30px;
+}
+
+div.buy-part>hr{
+    background-color: rgb(63,35,18);
+    border:none;
+    width: 3px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+div.buy-part>a#buy-btn {
+    color: rgb(63, 35, 18);
+    padding: 10px;
+    background-color: rgb(249, 245, 240);
+    border: 0.1px solid rgb(63, 35, 18);
+    border-radius: 30px;
+    transition: box-shadow 0.3s ease;
+}
+
+div.buy-part>a#buy-btn:hover {
+    box-shadow: 0px 0px 12px -5px rgb(63, 35, 18);
 }

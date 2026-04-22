@@ -50,6 +50,10 @@ div.menu-body>ul{
     row-gap: 7rem;
 }
 
+div.menu-body>ul>a.meal{
+    z-index: 1;
+}
+
 div.menu-body>ul>a>li.meal{
     width: 23rem;
     height: 30rem;
@@ -121,5 +125,9 @@ div.text-part>p.explanation{
     position: relative;
     left: 0.1rem;
     top: 1.3rem;
+}
+
+li.meal>div.price{
+    display:none;
 }
 
