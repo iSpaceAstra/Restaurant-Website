@@ -25,6 +25,7 @@ const passwordInput = document.querySelector("#passwordInput")
 const overlayBtn = document.querySelector("#login-btn")
 const tableBtn = document.querySelector("#tableEntranceBtn")
 const orderBtn = document.querySelector(".order");
+const buyBtn = document.querySelector('#buy-btn');
 
 const menus = [
     {
@@ -200,7 +201,7 @@ function goAdminisator(url) {
 document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
     const masaNo = urlParams.get('masa');
-    document.body.style.overflow = 'hidden';
+    // document.body.style.overflow = 'hidden';
 
     if (masaNo) {
         const displayElement = document.getElementById("tableId");
@@ -327,7 +328,7 @@ function openMealPage(title, img, desc, price) {
     div.querySelector("h3").innerText = title;
     div.querySelector("img").src = img;
     div.querySelector("p").innerText = desc;
-    div.querySelector(".price").innerText = price;
+    div.querySelector(".price-in").innerText = price;
 
     div.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -342,4 +343,9 @@ document.addEventListener('click', function (event) {
         div.classList.remove('active');
         document.body.style.overflow = 'auto';
     }
+})
+
+buyBtn.addEventListener('click', (e)=>{
+    e.preventDefault();
+    console.log("Çalıştı!")
 })
