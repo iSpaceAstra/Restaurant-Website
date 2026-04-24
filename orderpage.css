@@ -169,8 +169,8 @@ p#tip>span.tips {
     align-items: center;
 }
 
-span.tips>span#fee{
-    display:flex;
+span.tips>span#fee {
+    display: flex;
     position: relative;
     justify-content: center;
     width: 6rem;
@@ -186,14 +186,14 @@ span.sum>p#tip {
     justify-content: right;
 }
 
-p#tip>span.text-1{
-    display:flex;
+p#tip>span.text-1 {
+    display: flex;
     position: relative;
     right: 12.5rem;
 }
 
-p#subtotal>span.text-1{
-    display:flex;
+p#subtotal>span.text-1 {
+    display: flex;
     position: relative;
     right: 10rem;
 }
@@ -202,14 +202,14 @@ div.result>span.tip {
     height: 4rem;
     width: 100%;
     border-bottom: 0.01px solid rgb(63, 35, 18);
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: right;
     align-items: center;
 }
 
-span.tip>span.text{
-    display:flex;
+span.tip>span.text {
+    display: flex;
     position: relative;
     right: 12.4rem;
     font-weight: 550;
@@ -217,14 +217,14 @@ span.tip>span.text{
     font-size: 1rem;
 }
 
-span.tip>ul{
-    list-style:none;
+span.tip>ul {
+    list-style: none;
     display: flex;
     position: absolute;
     column-gap: 0.5rem;
 }
 
-span.tip>ul>a>li{
+span.tip>ul>a>li {
     width: 2.4rem;
     height: 2.4rem;
     display: flex;
@@ -239,18 +239,18 @@ span.tip>ul>a>li{
     transition: box-shadow 0.4s ease;
 }
 
-span.tip>ul>a>li:hover{
+span.tip>ul>a>li:hover {
     box-shadow: 0px 1px 5px rgb(63, 35, 18);
 }
 
-div.result>span.purchase{
+div.result>span.purchase {
     height: 10rem;
     width: 100%;
-    display:flex;
+    display: flex;
     flex-direction: column;
 }
 
-span.purchase>p.total{
+span.purchase>p.total {
     height: 4rem;
     width: 100%;
     display: flex;
@@ -259,7 +259,7 @@ span.purchase>p.total{
     justify-content: right;
 }
 
-p.total>span.text{
+p.total>span.text {
     font-weight: 500;
     font-size: 1.2rem;
     color: rgb(63, 35, 18);
@@ -268,7 +268,7 @@ p.total>span.text{
     right: 12rem;
 }
 
-p.total>span.price{
+p.total>span.price {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -276,14 +276,14 @@ p.total>span.price{
     font-weight: 500;
 }
 
-span.price>span#price{
-    display:flex;
+span.price>span#price {
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 6rem;
 }
 
-span.purchase>a.buy{
+span.purchase>a.buy {
     height: 6rem;
     width: 100%;
     border-radius: 50px;
@@ -298,16 +298,130 @@ span.purchase>a.buy{
     transition: box-shadow 0.3s ease;
 }
 
-a.buy:hover{
+a.buy:hover {
     box-shadow: 0px 1px 5px rgb(159, 104, 0);
 }
 
 div.content>div.meals {
     width: 55rem;
-    height: 35rem;
+    height: auto;
     background-color: rgb(249, 245, 240);
     border-radius: 15px;
     border: 0.1px solid rgb(63, 35, 18);
     box-shadow: 0px 1px 5px rgb(0, 0, 0, 0.3);
-    padding: 3rem;  
+    padding: 3rem;
+}
+
+div.meals>ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+div.meals>ul>li.meal {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 10rem;
+    border-radius: 20px;
+    border: 2px solid rgb(63, 35, 18);
+    background-color: rgb(249, 245, 233);
+    padding: 1rem;
+}
+
+li.meal>span.img {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 20px;
+    border: 2px solid rgb(63, 35, 18);
+    overflow: hidden
+}
+
+span.img>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block
+}
+
+li.meal>span.text {
+    display: flex;
+    flex-direction: column;
+    height: 8rem;
+    width: 30rem;
+    padding-left: 1rem;
+}
+
+span.text>span.title {
+    height: 3rem;
+    width: 30rem;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    color: rgb(63, 35, 18);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+span.text>span.desc {
+    height: 2rem;
+    width: 15rem;
+    overflow: hidden;
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    justify-content: left;
+    color: rgb(63, 35, 18);
+    font-weight: 600;
+    font-size: 0.9rem;
+    -webkit-mask-image: linear-gradient(to right, black 80%, transparent 100%);
+    mask-image: linear-gradient(to right, black 80%, transparent 100%);
+}
+
+span.text>span.amount {
+    height: 3rem;
+    width: 20rem;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color: rgb(63, 35, 18);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+li.meal>span.price{
+    position: relative;
+    height: 8rem;
+    display: flex;
+    flex-direction: column;
+    color: rgb(63, 35, 18);
+    font-size: 1.3rem;
+    font-weight: 600;;
+    width:8.5rem;
+}
+
+span.price>a#clear{
+    color: gray;
+    display:flex;
+    position: relative;
+    justify-content: right;
+    font-size: 0.8rem;
+    font-weight: 600;
+    opacity: 0.8;
+    height: 3rem;
+}
+
+span.price>span.a{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+}
+
+span.a>span#price{
+    display: flex;
+    width: 5rem;
+    justify-content: center;
 }

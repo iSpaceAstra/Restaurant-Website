@@ -285,26 +285,44 @@ window.siparisVer = function (urunAdi, fiyat) {
         });
 };
 
-orderBtn.addEventListener("click", () => {
-    fetch("orderpage.html")
-        .then(response => {
-            if (!response.ok) throw new Error("Dosya yüklenemedi!")
-            return response.text();
-        })
-        .then(html => {
-            document.querySelector(".body-container").innerHTML = html;
+orderBtn.addEventListener("click", async () => {
+    try {
+        // 1. Sayfayı fetch ile çek (Bekle)
+        const response = await fetch("orderpage.html");
+        
+        if (!response.ok) throw new Error("Dosya yüklenemedi!");
 
-            if (!document.querySelector("script[src='order.js']")) {
-                const orderScript = document.createElement("script");
-                orderScript.src = "order.js";
-                document.body.appendChild(orderScript); // Dosyayı body'nin sonuna ekle ve çalıştır
-                document.body.style.overflow = 'auto';
-            }
-        })
-        .catch(err => {
-            console.log(err);
-        })
-})
+        // 2. İçeriği metin olarak al (Bekle)
+        const html = await response.text();
+
+        // 3. HTML'i konteynıra bas
+        document.querySelector(".body-container").innerHTML = html;
+
+        // 4. KRİTİK ADIM: HTML artık DOM'da var! 
+        // Şimdi sepeti dolduran fonksiyonu çağırabiliriz.
+        addOrdertoCart();
+
+    } catch (err) {
+        // Hata oluşursa burası yakalar
+        console.error("Bir hata oluştu:", err);
+    }
+});
+
+// orderBtn.addEventListener("click", () => {
+//     fetch("orderpage.html")
+//         .then(response => {
+//             if (!response.ok) throw new Error("Dosya yüklenemedi!")
+//             return response.text();
+//         })
+//         .then(html => {
+//             document.querySelector(".body-container").innerHTML = html;
+
+//             addOrdertoCart();
+//         })
+//         .catch(err => {
+//             console.log(err);
+//         })
+// })
 
 document.addEventListener('click', function (event) {
 
@@ -319,6 +337,12 @@ document.addEventListener('click', function (event) {
         const mealPrice = mealPage.querySelector('.price').innerText;
 
         openMealPage(mealTitle, mealImg, mealDesc, mealPrice);
+
+        buyBtn.addEventListener('click', (e) => {
+            sendCart(mealTitle, mealImg, mealDesc, mealPrice);
+            console.log(mealTitle, mealImg, mealDesc, mealPrice);
+            
+        })
     }
 });
 
@@ -345,7 +369,88 @@ document.addEventListener('click', function (event) {
     }
 })
 
-buyBtn.addEventListener('click', (e)=>{
-    e.preventDefault();
-    console.log("Çalıştı!")
-})
+function sendCart(title, img, desc, price) {
+    const sepet = JSON.parse(sessionStorage.getItem('sepetim')) || [];
+
+    const urunVarMi = sepet.find(urun => urun.name === title);
+
+    if (urunVarMi) {
+        console.log("Bu ürün zaten sepette var!");
+        return;
+    }
+
+    const meal = {
+        name: title,
+        image: img,
+        description: desc,
+        price: price
+    };
+
+    sepet.push(meal);
+    sessionStorage.setItem('sepetim', JSON.stringify(sepet));
+}
+
+function addOrdertoCart(){
+    const hamVeri = sessionStorage.getItem('sepetim');
+
+    // 2. Eğer veri varsa (boş değilse) objeye çevir, yoksa boş dizi yap
+    const sepetListesi = JSON.parse(hamVeri) || [];
+    // 3. Verilerin ekleneceği HTML kutusunu seç (ID'si sepet-listesi olsun varsayalım)
+    const sepetKutusu = document.querySelector(".meal-list");
+
+    // 4. Her bir ürün için ekrana eleman oluştur
+    sepetListesi.forEach((urun) => {
+        const li = document.createElement("li");
+        li.className = "meal";
+        const span1 = document.createElement("span");
+        span1.className = "img";
+        const img = document.createElement("img");
+        img.src = urun.image;
+        span1.appendChild(img);
+
+        const span2 = document.createElement("span");
+        span2.className = "text"
+        const span3 = document.createElement("span");
+        span3.className = "title"
+        span3.innerText = urun.name;
+        span2.appendChild(span3);
+        const span4 = document.createElement("span");
+        span4.className = "desc";
+        span4.innerText = urun.description;
+        span2.appendChild(span4);
+        const span5 = document.createElement("span");
+        span5.className = "amount";
+        span2.appendChild(span5);
+
+
+        const span6 = document.createElement("span");
+        span6.className = "price";
+        const a = document.createElement("a");
+        a.href = "javascript:void(0);"
+        a.id = "clear"
+        const span9 = document.createElement("span")
+        span9.id = "sil";
+        span9.innerText = "Sil"
+        span6.appendChild(a);
+        const i = document.createElement("i");
+        i.className = "fa-solid fa-trash"
+        a.appendChild(i);
+        a.appendChild(span9);
+        const span7 = document.createElement("span");
+        span7.className = "a";
+        const span10 = document.createElement("span");
+        span10.id = "tl"
+        span10.innerText = "TL"
+        span6.appendChild(span7);
+        const span8 = document.createElement("span");
+        span8.id = "price"
+        span8.innerText = urun.price;
+        span7.appendChild(span8);
+        span7.appendChild(span10);
+        
+        li.appendChild(span1);
+        li.appendChild(span2);
+        li.appendChild(span6);
+        sepetKutusu.appendChild(li);
+    });
+}

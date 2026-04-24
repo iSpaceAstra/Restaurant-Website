@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="orderpage.css">
 </head>
 
@@ -32,12 +33,20 @@
             <div class="content">
                 <div class="meals">
                     <ul class="meal-list">
-                        <li class="meal">
-                            <span class="img"></span>
-                            <span class="title"></span>
-                            <span class="desc"></span>
-                            <span class="amount"></span>
-                        </li>
+                        <!-- <li class="meal">
+                            <span class="img"><img src="img/desserts/firinsütlac.webp" alt=""></span>
+                            <span class="text">
+                                <span class="title">Fırın Sütlaç</span>
+                                <span class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ipsum
+                                    ad placeat cupiditate magnam dignissimos labore adipisci consequuntur, debitis hic
+                                    molestiae optio et, similique nesciunt dolorum error soluta minima esse?</span>
+                                <span class="amount">1.5 Porsiyon</span>
+                            </span>
+                            <span class="price">
+                                <a href="javascript:void(0);" id="clear"><i class="fa-solid fa-trash"></i><span id="sil">Sil</span></a>
+                                   <span class="a"><span id="price">1000.00</span><span id="tl">TL</span></span>
+                                </span>
+                        </li> -->
                     </ul>
                 </div>
                 <div class="result">
@@ -51,20 +60,31 @@
                     <span class="tip">
                         <span class="text">Bahşiş Ekle (Opsiyonel)</span>
                         <ul>
-                            <a href="#"><li>+10</li></a>
-                            <a href="#"> <li>+20</li></a>
-                            <a href="#"><li>+50</li></a>
-                            <a href="#"><li>+100</li></a>
+                            <a href="#">
+                                <li>+10</li>
+                            </a>
+                            <a href="#">
+                                <li>+20</li>
+                            </a>
+                            <a href="#">
+                                <li>+50</li>
+                            </a>
+                            <a href="#">
+                                <li>+100</li>
+                            </a>
                         </ul>
                     </span>
                     <span class="purchase">
-                        <p class="total"><span class="text">Toplam</span><span class="price"><span id="price"></span>TL</span></p>
+                        <p class="total"><span class="text">Toplam</span><span class="price"><span
+                                    id="price"></span>TL</span></p>
                         <a href="javascript:void(0);" class="buy">Ödeme Yap</a>
                     </span>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="app.js"></script>
 </body>
 
 </html>
